@@ -27,9 +27,10 @@ def btn_equal():
     input_text.set(result)
     expression = ""
 
-# def btn_back():
-#     global expression
-#     expression = expression.delete[-1]
+def btn_back():
+    global expression
+    expression = expression[:-1:]
+    input_text.set(expression)
 
 expression = ""
 
@@ -106,7 +107,7 @@ button_del = Button(btn_frame, text="del", width=25, height=2, bg="#f20905",acti
                     activebackground="#8a0606", command=lambda : btn_clear()).grid(row=4, column=0, columnspan=2, padx=5, pady=10)
 
 button_back = Button(btn_frame, text="back", width=25, height=2, bg="#e8760c",activeforeground="white",
-                     activebackground="orange").grid(row=4, column=2, columnspan=2, padx=5, pady=10)
+                     activebackground="orange", command=lambda : btn_back()).grid(row=4, column=2, columnspan=2, padx=5, pady=10)
 
 # Buttons ---------------------------------------
 
